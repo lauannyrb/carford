@@ -29,7 +29,7 @@ def login():
     if not bcrypt.checkpw(password.encode(), bytes(user.password)):
         return {'message':'Incorrect password'}, 401
 
-    expiration = datetime.datetime.now(tz=datetime.timezone.utc) + datetime.timedelta(minutes=int(os.getenv('JWT_EXPIRATION', 20)))
+    expiration = datetime.datetime.now(tz=datetime.timezone.utc) + datetime.timedelta(minutes=int(os.getenv('JWT_EXPIRATION', 15)))
     user_data = {
         "username": user.username,
         "id": user.id,
