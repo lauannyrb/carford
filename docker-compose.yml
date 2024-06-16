@@ -5,9 +5,7 @@ services:
     build: .
     ports:
       - "${API_PORT}:${API_PORT}"
-    volumes:
-      - .:/app
     env_file:
       - .env
-    environment:
-      - FLASK_ENV=development
+    volumes:
+      - ./data:/app/data
