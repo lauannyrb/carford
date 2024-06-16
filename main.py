@@ -18,4 +18,4 @@ app.register_blueprint(user_route, url_prefix='/')
 load_dotenv()
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv('API_PORT', 5000))
+    app.run(debug=True, port=os.getenv('API_PORT', 5000), host='0.0.0.0')
